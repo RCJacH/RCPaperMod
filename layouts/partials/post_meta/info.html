@@ -1,0 +1,33 @@
+{{- $params := .Params -}}
+<div class="l-postMeta -single">
+  <div class="l-postMeta__wrapper">
+    <div class="l-postMeta__box">
+      <div class="l-postMeta__element">
+        {{ partial "post_meta/datetime" . }}
+      </div>
+      {{- if and (not .Params.hide_wordcount) (not .Site.Params.ui.wordcount_disable) }}
+      <div class="l-postMeta__element">
+        {{ partial "templates/emoji" (dict "site" "word_count" "default" ":page_facing_up:") }}
+        &nbsp;
+        <span class="c-postMeta__wordcount">{{ i18n "word_count" . -}}</span>
+        {{ end -}}
+      </div>
+      {{- if and (not .Params.hide_readingtime) (not .Site.Params.ui.readingtime_disable) -}}
+      <div class="l-postMeta__element">
+        {{ partial "templates/emoji" (dict "site" "reading_time" "default" ":coffee:") }}
+        &nbsp;
+        <span class="c-postMeta__readingtime">{{ i18n "read_time" .ReadingTime | default (printf "%s min" .ReadingTime) -}}</span>
+      </div>
+      {{ end -}}
+      {{- if and (not .Params.hide_author) (not .Site.Params.ui.author_enable) }}
+      {{- with (partial "functions/get_author" .) -}}
+      <div class="l-postMeta__element">
+        {{ partial "templates/emoji" (dict "param" $params.AuthorEmoji "site" "author" "default" ":writing_hand:") }}
+        &nbsp;
+        <span class="c-postMeta__author">{{ . | markdownify -}}</span>
+      </div>
+      {{ end -}}
+      {{ end -}}
+    </div>
+  </div>
+</div>

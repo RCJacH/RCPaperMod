@@ -1,0 +1,1 @@
+twitter: https://twitter.com/intent/tweet/?text={{ .title }}&amp;url={{ .pageurl }}&amp;hashtags={{ .tags }}"

@@ -1,0 +1,24 @@
+- id: prev_page
+  translation: "Prev Page"
+
+- id: next_page
+  translation: "Next Page"
+
+- id: post_time_format
+  translation: "January 2, 2006"
+
+- id: read_time
+  translation:
+    one : "1 min"
+    other: "{{ .Count }} min"
+
+- id: word_count
+  translation:
+    one: "1 word"
+    other: "{{ .WordCount }} words"
+
+- id: toc
+  translation: "Table of Contents"
+
+- id: translations
+  translation: "Translations"

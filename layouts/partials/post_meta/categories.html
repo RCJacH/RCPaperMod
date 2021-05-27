@@ -1,0 +1,29 @@
+<ul class="c-tags">
+  {{ partial "templates/emoji" (dict "site" "categories" "default" ":file_folder:") }}
+  <span class="c-tagslist">
+    {{- range $k, $v := ( .GetTerms "categories" ) }}
+      <li class="c-tagslist__item">
+        <a
+          href="{{ .Permalink | relURL }}"
+          title="{{ .LinkTitle }}"
+        >{{ .LinkTitle -}}
+        </a>
+      </li>
+    {{ end -}}
+  </span>
+</ul>
+
+      <!-- {{- if and (not .Params.hide_category) (not .Site.Params.ui.category_enable) }}
+      {{ $categoriesLen := len .Params.categories }}
+      {{ if gt $categoriesLen 0 }}
+      <div class="l-postMeta__element">
+        <span class="c-postMeta__category">
+          {{ range $k, $v := .Params.categories }}
+          {{ $url := printf "categories/%s" (. | urlize | lower) }}
+          <a href="{{ $url | absLangURL }}">{{ . }}</a>
+          {{ if lt $k (sub $categoriesLen 1) }}&middot;{{ end }}
+          {{ end }}
+        </span>
+      </div>
+      {{ end -}}
+      {{ end -}} -->

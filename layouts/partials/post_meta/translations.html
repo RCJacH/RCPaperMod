@@ -1,0 +1,16 @@
+{{- if .IsTranslated -}}
+  <ul class="l-i18nList">
+    {{- range .Translations }}
+    <li class="l-18nList__item">
+      <a href="{{ .Permalink }}">
+        {{- if (and .Site.Params.display_full_langname (.Language.LanguageName)) }}
+          {{- .Language.LanguageName | emojify | humanize -}}
+        {{- else }}
+          {{- .Lang | humanize -}}
+        {{- end -}}
+        : {{ .Title}}
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+{{- end -}}

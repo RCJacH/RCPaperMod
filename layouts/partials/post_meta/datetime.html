@@ -1,0 +1,13 @@
+{{- if not .Date.IsZero }}
+<span class="c-emoji">
+  {{- ($.Site.Params.writtenTimeIcon | safeHTML) | default (emojify ":calendar:") -}}
+</span>
+&nbsp;
+<time
+  class="c-postMeta__time"
+  datetime="{{.Date.Format "2000-01-02"}}"
+  title="{{ i18n "tooltip_written_time" }}"
+>
+  {{- .Date.Format (i18n "post_time_format") -}}
+</time>
+{{ end -}}

@@ -1,0 +1,132 @@
+.l-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    line-height: var(--header-height)
+}
+
+.l-nav a {
+    display: block
+}
+
+.c-logo,
+.l-menu {
+    display: flex;
+    margin: auto var(--gap);
+}
+
+.c-logo {
+    flex-wrap: inherit
+}
+
+.c-logo a {
+    font-size: 24px;
+    font-weight: 700;
+    margin-inline-end: 10px
+}
+
+.c-logo a img {
+    display: inline;
+    vertical-align: middle;
+    pointer-events: none;
+    transform: translate(0, -10%);
+    border-radius: 6px;
+    margin-inline-end: 8px
+}
+
+.c-theme_toggle svg {
+    height: 18px;
+    user-select: none;
+    cursor: pointer
+}
+
+body.dark #moon {
+    vertical-align: middle;
+    display: none
+}
+
+body:not(.dark) #sun {
+    display: none
+}
+
+.l-menu {
+    list-style: none;
+    word-break: keep-all;
+    overflow-x: auto;
+    white-space: nowrap
+}
+
+.l-menu li+li {
+    margin-inline-start: var(--gap)
+}
+
+.l-menu a {
+    font-size: 16px
+}
+
+.l-menu .active {
+    font-weight: 500;
+    border-bottom: 2px solid currentColor
+}
+
+.l-lang_switch li,
+.l-lang_switch ul,
+.l-theme__switches {
+    display: inline-flex
+}
+
+.l-lang_switch a {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 8px
+}
+
+.l-theme__switches {
+    flex-wrap: inherit
+}
+
+.c-menuList {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.c-menuList__item {
+    padding: 0 1rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1023px) {
+
+   }
+@media only screen and (max-width: 767px) {
+    .c-menuList {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 3.52941em;
+        max-width: 664px;
+        margin: 0 auto;
+        padding: 45px 40px 8px;
+        height: auto;
+        overflow-y: auto;
+        /* visibility: hidden; */
+        transition: visibility 0s linear 1s
+ 
+    }
+    .c-menuList__item {
+        /* opacity: 0; */
+        pointer-events: none
+    }
+   }
+@media only screen and (max-width: 419px) {
+    .c-menuList {
+        display: none;
+    }
+   }

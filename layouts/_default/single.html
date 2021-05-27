@@ -1,0 +1,51 @@
+{{- define "main" }}
+
+<article class="l-post">
+  <header class="l-post__header">
+    <h1 class="c-post_title">
+      {{ .Title }}
+      {{- if .Draft }}<div class="entry-isdraft"><sup>&nbsp;&nbsp;[draft]</sup></div>{{- end }}
+    </h1>
+    <div class="post-description">
+      {{ .Description }}
+    </div>
+    {{- if not .Params.hide_meta }}
+      {{- partial "post_meta/info" . -}}
+      {{- partial "post_meta/translations" . -}}
+    {{- end}}
+  </header>
+  {{- $isHidden := ((.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInSingle) | default .Params.cover.hidden )}}
+  {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
+  {{- if .Params.ShowToc }}
+    <aside class="l-toc">
+      <details {{if .Params.open_toc }}open{{ end }} class="c-toc">
+        <summary
+        accesskey="{{ site.Params.accesskey.toc | default "c"}}"
+        title="(Alt + C)"
+        >
+          <div class="c-toc__title">{{- i18n "toc" | default "Table of Contents" -}}</div>
+        </summary>
+        <blockquote class="c-toc__contents">
+            {{- partial "toc" . -}}
+        </blockquote>
+      </details>
+    </aside>
+  {{- end }}
+  <div class="l-post_content">
+    {{- partial "anchored_headings.html" .Content -}}
+  </div>
+  <footer class="l-post_footer">
+    {{- if .Params.tags }}
+      {{- partial "post_meta/tags" . }}
+    {{- end }}
+    {{- if (and (not .Site.Params.sharebutton_disable) (not .Params.hide_share) ) }}
+      {{- partial "share_icons.html" . }}
+    {{- end }}
+  </footer>
+
+  {{- if and ($.Site.Params.comments) (ne .Params.comments false) }}
+  {{- partial "comments.html" . }}
+  {{- end }}
+</article>
+
+{{- end  }}{{/* end main */}}

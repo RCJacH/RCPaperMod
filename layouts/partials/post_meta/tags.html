@@ -1,0 +1,14 @@
+<ul class="c-tags">
+  {{ partial "templates/emoji" (dict "site" "tags" "default" ":label:") }}
+  <span class="c-tagslist">
+    {{- range ( .GetTerms "tags" ) }}
+      <li class="c-tagslist__item">
+        <a
+          href="{{ .Permalink | relURL }}"
+          title="{{ .LinkTitle }}"
+        >{{ .LinkTitle -}}
+        </a>
+      </li>
+    {{ end -}}
+  </span>
+</ul>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+
+{{- partial "head.html" . }}
+
+<body class="l-viewFrame {{ if (and (eq .Kind `page` ) (ne .Layout `archives`)) -}}
+single{{- else -}}list
+{{- if .IsHome }} home{{ end }}{{ end }}
+{{- if eq $.Site.Params.defaultTheme `dark` }} dark{{ end }}"
+id="top">
+{{- if (and .IsHome .Site.Params.landing) }}
+  {{- partial "landing.html" . -}}
+{{- end }}
+  <div class="l-viewGlass background">
+    {{- partialCached "header.html" . .Page}}
+    <main class="l-main">
+      <aside class="l-main__column -left">
+        <div class="l-nav">
+        </div>
+      </aside>
+      <div class="l-main__column -center -isFluid">
+        <div class="l-content"><div class="l-content__main">{{- block "main" . }}{{- end }}</div></div>
+      </div>
+      <aside class="l-main__column -right">
+      {{ partial "social_icons.html" . }}
+      </aside>
+    </main>
+    {{- partialCached "footer.html" . .Type .Layout .Params }}
+  </div>
+</body>
+
+</html>
