@@ -16,7 +16,7 @@
   </header>
   {{- $isHidden := ((.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInSingle) | default .Params.cover.hidden )}}
   {{- partial "cover.html" (dict "cxt" . "IsHome" false "isHidden" $isHidden) }}
-  {{- if .Params.ShowToc }}
+  {{- if not .Params.hide_toc }}
     <aside class="l-toc">
       <details {{if .Params.open_toc }}open{{ end }} class="c-toc">
         <summary
@@ -43,7 +43,7 @@
     {{- end }}
   </footer>
 
-  {{- if and ($.Site.Params.comments) (ne .Params.comments false) }}
+  {{- if and ($.Site.Params.comments) (not .Params.hide_comments) }}
   {{- partial "comments.html" . }}
   {{- end }}
 </article>

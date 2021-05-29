@@ -30,9 +30,16 @@
     {{- end}}
 </header>
 
-<div id="searchbox">
-    <input id="searchInput" autofocus placeholder="{{.Title}} ↵" aria-label="search">
+{{- if not (.Site.Params.disable_search) }}
+<div class="screen">
+    <div id="searchbox">
+    <input id="searchInput" autofocus placeholder="{{.Site.Params.default_search}} ↵" aria-label="search">
     <ul id="searchResults" aria-label="search results"></ul>
+    </div>
 </div>
+<li class="c-menuList__item">
+    {{ partial "templates/emoji" (dict "site" "search" "default" ":mag:") }}
+</li>
+{{- end }}
 
 {{- end  }}{{/* end main */}}

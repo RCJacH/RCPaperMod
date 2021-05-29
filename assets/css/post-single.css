@@ -26,7 +26,7 @@
 .l-postMeta__wrapper {
     display: flex;
     width: 100%;
-    margin-top: 1rem;
+    margin: 0.3rem 0;
     justify-content: space-between;
 }
 
@@ -371,11 +371,11 @@
 
 .c-tagslist__item a {
     display: block;
-    padding-inline-start: 14px;
-    padding-inline-end: 14px;
     color: var(--secondary);
     font-size: 14px;
-    line-height: 34px;
+    line-height: 2rem;
+    padding-inline-start: .8rem;
+    padding-inline-end: .8rem;
     background: var(--code-bg);
     border-radius: 4px
 }

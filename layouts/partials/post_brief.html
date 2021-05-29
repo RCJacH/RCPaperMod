@@ -21,6 +21,8 @@
     </header>
     {{- if (ne .Site.Params.hideSummary true)}}
     <section class="entry-content">
+      <p>{{ .Description | htmlUnescape }}</p>
+      <hr/>
       <p>{{ .Summary | plainify | htmlUnescape }}...</p>
     </section>
     {{- end }}
@@ -29,7 +31,7 @@
     <div class="l-postMeta__wrapper">
       {{- partial "post_meta/info" . -}}
     </div>
-    {{- if and (not .Params.hide_category) (not .Site.Params.ui.category_enable) }}
+    {{- if and (not .Params.hide_category) (not .Site.Params.ui.category_disable) }}
     {{ $categoriesLen := len .Params.categories }}
     {{ if gt $categoriesLen 0 }}
     <div class="l-postMeta__wrapper">
