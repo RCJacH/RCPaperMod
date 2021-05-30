@@ -32,17 +32,18 @@
       {{- partial "post_meta/info" . -}}
     </div>
     {{- if and (not .Params.hide_category) (not .Site.Params.ui.category_disable) }}
-    {{ $categoriesLen := len .Params.categories }}
-    {{ if gt $categoriesLen 0 }}
+    {{- if .Param "categories" }}
     <div class="l-postMeta__wrapper">
       {{- partial "post_meta/categories" . }}
     </div>
-    {{ end -}}
-    {{ end -}}
+    {{- end }}
+    {{- end }}
     {{- if and (not .Params.hide_tags) (not .Site.Params.ui.tags_disable) }}
+    {{- if .Param "tags" }}
     <div class="l-postMeta__wrapper">
       {{- partial "post_meta/tags" . }}
     </div>
+    {{- end }}
     {{- end }}
   </footer>
   <!-- <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a> -->

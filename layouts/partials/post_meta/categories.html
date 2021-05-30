@@ -1,7 +1,7 @@
 <ul class="c-tags">
   {{ partial "templates/emoji" (dict "site" "categories" "default" ":file_folder:") }}
   <span class="c-tagslist">
-    {{- range $k, $v := ( .GetTerms "categories" ) }}
+    {{- range ( .GetTerms "categories" ) }}
       <li class="c-tagslist__item">
         <a
           href="{{ .Permalink | relURL }}"
