@@ -47,10 +47,10 @@
     border-radius: var(--radius);
     transition: transform .1s
 }
-
+/* 
 .post-entry:active {
     transform: scale(.96)
-}
+} */
 
 .tag-entry .entry-cover {
     /* display: none */

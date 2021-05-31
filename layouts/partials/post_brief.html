@@ -1,13 +1,13 @@
 {{- $class := "post-entry" }}
 {{- if $.IsFirst }}
-  {{- if .Site.Params.homeInfoParams | or .Site.Params.disableSpecial1stPost}}
-    {{- partial "home_info.html" . }}
-  {{- else }}
-    {{- $class = "first-entry" }}
+{{- if .Site.Params.homeInfoParams | or .Site.Params.disableSpecial1stPost}}
+{{- partial "home_info.html" . }}
+{{- else }}
+{{- $class = "first-entry" }}
   {{- end }}
-{{- else if .term }}
+  {{- else if .term }}
   {{- $class = "post-entry tag-entry" }}
-{{- end }}
+  {{- end }}
 {{- with .content }}
 <article class="{{ $class }}">
   {{- $isHidden := (.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInList)}}
@@ -19,14 +19,17 @@
         {{- if .Draft }}<div class="entry-isdraft"><sup>&nbsp;&nbsp;[draft]</sup></div>{{- end }}
       </h2>
     </header>
-    {{- if (ne .Site.Params.hideSummary true)}}
+  </a>
+  {{- partial "post_meta/translations" . -}}
+  {{- if (not .Site.Params.summary_disable)}}
+  <a aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">
     <section class="entry-content">
       <p>{{ .Description | htmlUnescape }}</p>
       <hr/>
       <p>{{ .Summary | plainify | htmlUnescape }}...</p>
     </section>
-    {{- end }}
   </a>
+  {{- end }}
   <footer class="entry-footer">
     <div class="l-postMeta__wrapper">
       {{- partial "post_meta/info" . -}}
@@ -46,6 +49,7 @@
     {{- end }}
     {{- end }}
   </footer>
-  <!-- <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a> -->
+
+  {{/*  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"> </a>  */}}
 </article>
 {{- end }}
