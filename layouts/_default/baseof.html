@@ -14,16 +14,9 @@ id="top">
   <div class="l-viewGlass background">
     {{- partialCached "header.html" . .Page}}
     <main class="l-main">
-      <aside class="l-main__column -left">
-        <div class="l-nav">
-        </div>
-      </aside>
       <div class="l-main__column -center -isFluid">
         <div class="l-content"><div class="l-content__main">{{- block "main" . }}{{- end }}</div></div>
       </div>
-      <aside class="l-main__column -right">
-      {{ partial "social_icons.html" . }}
-      </aside>
     </main>
     {{- partialCached "footer.html" . .Type .Layout .Params }}
   </div>

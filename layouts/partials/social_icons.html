@@ -1,19 +1,19 @@
-{{ if .Site.Social -}}
 {{- $socialurl := .Site.Data.socialurl -}}
+{{ with .Site.Social -}}
 <div class="l-socialMedia">
   <div class="l-socialMedia__filler"></div>
   <div class="l-socialMedia__sticky">
-    {{- range $index, $val := .Site.Social }}
-      {{- with (index $socialurl $index) }}
-      <a
-        href="{{- strings.Replace . "{{.}}" $val -}}"
-        target="_blank"
-        rel="noopener noreferrer me"
-        title="{{ $index }}"
-      >
-        <i class="fab fa-{{$index}} | c-faResponsive" ></i>
-      </a>
-      {{ end -}}
+    {{- range $index, $val := . }}
+    {{- with (index $socialurl $index) }}
+    <a
+      href="{{- strings.Replace . "{{.}}" $val -}}"
+      target="_blank"
+      rel="noopener noreferrer me"
+      title="{{ $index }}"
+    >
+      <i class="fab fa-{{$index}} | c-faResponsive" ></i>
+    </a>
+    {{ end -}}
     {{ end -}}
   </div>
 </div>
