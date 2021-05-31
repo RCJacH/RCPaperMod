@@ -1,3 +1,3 @@
 <span class="c-emoji">
-  {{- .param | safeHTML | default (index site.Params.ui .site) | default (emojify .default) -}}
+  {{- .param | safeHTML | default (site.Params.ui.emoji (.Get .site)) | default (emojify .default) -}}
 </span>
