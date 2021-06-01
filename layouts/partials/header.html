@@ -54,7 +54,7 @@
             <li>
               <a href="{{- .Permalink -}}" title="{{ .Language.LanguageName | default (.Lang | humanize) }}"
                 aria-label="{{ .Language.LanguageName | default (.Lang | humanize) }}">
-                {{- if (and $.Site.Params.displayFullLangName (.Language.LanguageName)) }}
+                {{- if (and $.Site.Params.display_full_langname (.Language.LanguageName)) }}
                 {{- .Language.LanguageName | emojify -}}
                 {{- else }}
                 {{- .Lang | humanize -}}
