@@ -79,3 +79,9 @@
 
 </script>
 {{- end }}
+{{- range .Site.Params.custom_js }}
+<script src="{{ . | absURL }}"></script>
+{{- end }}
+{{- range .Params.custom_js }}
+<script src="{{ . | absURL }}"></script>
+{{- end }}
