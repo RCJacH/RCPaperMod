@@ -36,6 +36,13 @@
   {{- end}}
   <link href="/css/fontawesome.min.css" rel="stylesheet">
   <link href="/css/brands.min.css" rel="stylesheet">
+
+  {{- range .Site.Params.custom_css }}
+  <link href="{{ . | absURL }}" rel="stylesheet" >
+  {{- end }}
+  {{- range .Params.custom_css }}
+  <link href="{{ . | absURL }}" rel="stylesheet" >
+  {{- end }}
   <!-- Search -->
   {{- if (eq .Layout `search`) -}}
   <link rel="preload" as="fetch" href="../index.json" crossOrigin="anonymous">
