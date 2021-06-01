@@ -1,0 +1,10 @@
+{{- if (gt (len .Params) 0) }}
+{{- $size := (.Get "size") | default 80 }}
+{{- with (.Get "email") | default .Site.Params.gravatar.email }}
+<img src="https://www.gravatar.com/avatar/{{ md5 . }}?s={{ $size }}">
+{{- end }}
+{{- else }}
+{{- with default .Site.Params.gravatar.email }}
+<img src="https://www.gravatar.com/avatar/{{ md5 . }}?s=80">
+{{- end }}
+{{- end }}
