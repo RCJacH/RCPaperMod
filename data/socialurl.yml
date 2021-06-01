@@ -1,4 +1,5 @@
 behance: //behance.net/{{.}}
+bilibili: //space.bilibili.com/{{.}}
 bitbucket: //bitbucket.com/{{.}}
 codepen: //codepen.io/{{.}}
 deviantart: //{{.}}.deviantart.com/
@@ -12,10 +13,11 @@ googleplus: //plus.google.com/+{{.}}
 instagram: //instagram.com/{{.}}
 jsfiddle: //jsfiddle.net/user/{{.}}
 linkedin: //linkedin.com/in/{{.}}
-mediu: //medium.com/@{{.}}
+medium: //medium.com/@{{.}}
 pinterest: //pinterest.com/{{.}}
 reddit: //reddit.com/user/{{.}}
 slideshare: //slideshare.com/{{.}}
+soundcloud: //soundcloud.com/{{.}}
 stackoverflow: //stackoverflow.com/users/{{.}}
 tumblr: //{{.}}.tumblr.com
 twitter: //twitter.com/{{.}}
@@ -24,4 +26,5 @@ vine: //vine.co/{{.}}
 weibo: //weibo.com/{{.}}
 wordpress: //{{.}}.wordpress.com
 xing: //xing.com/profile/{{.}}
-youtube: //youtube.com/{{.}}
+youtube: //youtube.com/channel/{{.}}
+zhihu: //zhihu.com/people/{{.}}
