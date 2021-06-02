@@ -24,9 +24,11 @@
   {{- if (not .Site.Params.summary_disable)}}
   <a aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">
     <section class="entry-content">
-      <p>{{ .Description | htmlUnescape }}</p>
-      <hr/>
+      {{- with .Description }}
+      <p>{{ . | htmlUnescape }}</p>
+      {{- else }}
       <p>{{ .Summary | plainify | htmlUnescape }}...</p>
+      {{- end }}
     </section>
   </a>
   {{- end }}
