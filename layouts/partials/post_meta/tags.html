@@ -1,14 +1,10 @@
-<ul class="c-tags">
-  {{ partial "templates/emoji" (dict "site" "tags" "default" ":label:") }}
-  <span class="c-tagslist">
-    {{- range ( .GetTerms "tags" ) }}
-      <li class="c-tagslist__item">
-        <a
-          href="{{ .Permalink | relURL }}"
-          title="{{ .LinkTitle }}"
-        >{{ .LinkTitle -}}
-        </a>
-      </li>
-    {{ end -}}
-  </span>
+<ul class="l-taxonomy">
+  {{ range ( .GetTerms "tags" ) -}}
+  <li class="c-taxonomy">
+    <a href="{{- .Permalink | relURL -}}" title="{{- .LinkTitle -}}" >
+      {{ partial "templates/emoji" (dict "site" "tags" "default" ":label:") -}}
+      <span class="c-postMeta -tags">{{- .LinkTitle -}}</span>
+    </a>
+  </li>
+  {{- end }}
 </ul>

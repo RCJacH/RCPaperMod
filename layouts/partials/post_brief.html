@@ -20,32 +20,23 @@
       </h2>
     </header>
   </a>
-  {{- partial "post_meta/translations" . -}}
+  <div class="l-postMeta">
+    {{- partial "post_meta/info" . -}}
+    {{- partial "post_meta/translations" . -}}
+  </div>
   {{- if (not .Site.Params.summary_disable)}}
-  <a aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">
-    <section class="entry-content">
-      {{- with .Description }}
-      <p>{{ . | htmlUnescape }}</p>
-      {{- else }}
-      <p>{{ .Summary | plainify | htmlUnescape }}...</p>
-      {{- end }}
-    </section>
-  </a>
+  <section class="entry-content">
+    {{- with .Description }}
+    <p>{{ . | htmlUnescape }}</p>
+    {{- else }}
+    <p>{{ .Summary | plainify | htmlUnescape }}...</p>
+    {{- end }}
+  </section>
   {{- end }}
   <footer class="entry-footer">
-    <div class="l-postMeta__wrapper">
-      {{- partial "post_meta/info" . -}}
-    </div>
-    {{- if and (not .Params.hide_category) (not .Site.Params.ui.category_disable) }}
-    {{- if .Param "categories" }}
-    <div class="l-postMeta__wrapper">
-      {{- partial "post_meta/categories" . }}
-    </div>
-    {{- end }}
-    {{- end }}
     {{- if and (not .Params.hide_tags) (not .Site.Params.ui.tags_disable) }}
     {{- if .Param "tags" }}
-    <div class="l-postMeta__wrapper">
+    <div class="l-postMeta__box">
       {{- partial "post_meta/tags" . }}
     </div>
     {{- end }}
