@@ -97,8 +97,15 @@
 }
 
 .l-post_content a,
+.l-18nList__item a {
+    box-shadow: 0 1px 0 var(--link);
+    color: var(--link);
+}
+
+.l-post_content a:hover,
+.l-18nList__item a:hover,
 .c-toc a:hover {
-    box-shadow: 0 1px 0 var(--primary)
+    color: var(--link-hover);
 }
 
 .l-post_content a code {
@@ -308,7 +315,7 @@
     left: -0.25em;
     border-width: 2px;
     border-style: solid;
-    border-color: red;
+    border-color: var(--marker);
     position: absolute;
     width: 110%;
     height: 1em;
@@ -432,7 +439,7 @@ h4:hover .anchor,
 h5:hover .anchor,
 h6:hover .anchor {
     display: inline-flex;
-    color: var(--secondary);
+    color: var(--link-hover);
     margin-inline-start: 8px;
     font-weight: 500
 }
