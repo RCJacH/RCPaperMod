@@ -6,12 +6,16 @@
       {{ .Title }}
       {{- if .Draft }}<div class="entry-isdraft"><sup>&nbsp;&nbsp;[draft]</sup></div>{{- end }}
     </h1>
+    {{ with .Description -}}
     <div class="post-description">
-      {{ .Description }}
+      {{ . }}
     </div>
+    {{- end }}
     {{- if not .Params.hide_meta }}
-      {{- partial "post_meta/info" . -}}
-      {{- partial "post_meta/translations" . -}}
+    <div class="l-postMeta">
+      {{ partial "post_meta/info" . -}}
+      {{ partial "post_meta/translations" . -}}
+    </div>
     {{- end}}
   </header>
   {{- $isHidden := ((.Site.Params.cover.hidden | default .Site.Params.cover.hiddenInSingle) | default .Params.cover.hidden )}}
