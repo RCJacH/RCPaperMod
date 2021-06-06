@@ -16,6 +16,7 @@
 .l-postMeta {
     font-size: 14px;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap
 }
 
