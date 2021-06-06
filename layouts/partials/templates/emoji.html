@@ -1,3 +1,12 @@
+{{ $emoji := "" -}}
+{{ $site := .site -}}
+{{ with .instance -}}
+  {{ $emoji = . -}}
+{{ else -}}
+  {{ with site.Params.ui.emoji -}}
+    {{ $emoji = .Get $site -}}
+  {{ end -}}
+{{- end -}}
 <span class="c-emoji">
-  {{- .param | default (site.Params.ui.emoji (.Get .site)) | default (emojify .default) | safeHTML -}}
+  {{- $emoji | default .default | safeHTML | emojify -}}
 </span>{{- .Scratch -}}
