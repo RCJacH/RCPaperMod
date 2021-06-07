@@ -10,11 +10,6 @@
   justify-content: center;
 }
 
-.l-socialMeida__filler {
-  height: 40vh;
-}
-
-.c-faResponsive {
-  font-size: 2rem;
-  padding: 0.5rem;
+.c-icon {
+  padding: 0.25rem;
 }
