@@ -13,3 +13,10 @@
 .c-icon {
   padding: 0.25rem;
 }
+
+.c-icon.-share {
+  padding: 0.2rem;
+  border-radius: 4px;
+  color: var(--theme);
+  background: var(--primary);
+}

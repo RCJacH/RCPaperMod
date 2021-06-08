@@ -415,7 +415,8 @@
 }
 
 .share-buttons a {
-    margin-top: 10px
+    margin-top: 10px;
+    margin-bottom: 5px
 }
 
 .share-buttons a:not(:last-of-type) {

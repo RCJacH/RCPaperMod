@@ -1,1 +1,27 @@
-twitter: https://twitter.com/intent/tweet/?text={{ .title }}&amp;url={{ .pageurl }}&amp;hashtags={{ .tags }}"
+# Global
+buffer: https://bufferapp.com/add?text={{ .title }}&url={{ .pageurl }}
+delicious: https://delicious.com/save?v=5&noui&jump=close&url={{ .pageurl }}&title={{ .title }} # &provider={{ .provider }}
+mail: mailto:?subject={{ .title }}&body={{ .pageurl }}
+evernote: https://www.evernote.com/clip.action?url={{ .pageurl }}&title={{ .title }}
+facebook: https://facebook.com/sharer/sharer.php?u={{ .pageurl }}&picture={{ .image }}&title={{ .title }}&description={{ .summary }}
+getpocket: https://getpocket.com/save?url={{ .pageurl }}&title={{ .title }}
+hackernews: https://news.ycombinator.com/submitlink?u={{ .posturl }}&t={{ .title }}
+linkedin: https://www.linkedin.com/shareArticle?mini=true&url={{ .pageurl }}&title={{ .title }}&summary={{ .summary }}&source={{ .siteurl }}
+pinterest: https://pinterest.com/pin/create/button/?media={{ .image }}&url={{ .pageurl }}&is_video=false&description={{ .title }}
+reddit: https://reddit.com/submit?url={{ .pageurl }}&title={{ .title }}
+stumbleupon: https://www.stumbleupon.com/submit?url={{ .pageurl }}&title={{ .title }}
+telegram: https://telegram.me/share/url?text={{ .title }}&url={{ .pageurl }}
+tumblr: https://www.tumblr.com/share/link?url={{ .pageurl }}&name={{ .title }}&description={{ .summary }}
+twitter: https://twitter.com/intent/tweet/?text={{ .title }}&url={{ .pageurl }}&hashtags={{ .tags }}"
+whatsapp: https://api.whatsapp.com/send?text={{ .title }}%20-%20{{ .pageurl }}
+wordpress: https://wordpress.com/press-this.php?u={{ .pageurl }}&t={{ .title }}&s={{ .summary }}&i={{ .image }}
+xing: https://www.xing.com/app/user?op=share;url={{ .pageurl }};title={{ .title }}
+
+# Chinese
+baidu: http://tieba.baidu.com/f/commit/share/openShareApi?url={{ .pageurl }}&title={{ .title }}&desc={{ .summary }}&pic={{ .image }}
+douban: http://www.douban.com/recommend/?url={{ .pageurl }}&image={{ .image }}&title={{ .title }}
+kaixin: http://www.kaixin001.com/repaste/share.php?rtitle={{ .title }}&rurl={{ .pageurl }}&rcontent={{ .summary }}
+qq: http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey??url={{ .pageurl }}&title={{ .title }}&pics={{ .image }}
+renren: http://share.renren.com/share/buttonshare.do?link={{ .pageurl }}&title={{ .title }}
+tencentweibo: http://v.t.qq.com/share/share.php?title={{ .title }}&url={{ .pageurl }}&pic={{ .image }}
+weibo: http://service.weibo.com/share/share.php?url={{ .pageurl }}&pic={{ .image }}&title={{ .title }}&ralateUid={{ .user }}
