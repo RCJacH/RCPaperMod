@@ -116,8 +116,9 @@
 }
 
 .l-post_content del {
+    --color: var(--del-color, #ff92bf);
     text-decoration: none;
-    background: linear-gradient(to right, var(--primary) 100%, transparent 0) 0 50%/1px 1px repeat-x
+    background: linear-gradient(to right, var(--color) 100%, transparent 0) 0 50%/1px 4px repeat-x
 }
 
 .l-post_content dl,
